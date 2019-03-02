@@ -22,7 +22,7 @@ source("code_carpentry/01_list_behavior_dataframes.R")
 source("code_carpentry/02_clean_bodyweight_data.R")
 source("code_carpentry/03_clean_autoradiography_data.R")
 
-#2. Social hierarchy characteristics  
+#2. Social hierarchy characteristics  f
 source("code_analysis/01_observation_descriptive.R")
 source("code_analysis/02_dominance.R")
 source("code_analysis/03_bodyweight.R")

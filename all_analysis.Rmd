@@ -1,0 +1,86 @@
+---
+title: "Social status in mouse social hierarchy is associated with oxytocin and vasopressin 1a receptor density"
+output: html_notebook
+---
+
+Run "all_analysis.R" first to display results/figures
+
+## 1. Social hierarchies
+### Observation hours/days
+```{r}
+# number of days of observation
+day
+day%>%summary()
+
+# number of observation hours
+hours
+hours%>%
+  ungroup() %>%
+  .$totalobs %>%
+  sum
+
+#total contests
+alldata %>% 
+  filter(Actor!="Start" & Actor!="End") %>%
+  nrow()
+
+#total hours PER day
+alldata %>%
+  filter(Actor=="End") %>% 
+  group_by(cohort) %>% 
+  top_n(1,uniqueobs) %>% 
+  as.data.frame() %>%
+  summarise(ave_total_obs_hour=mean(uniqueobs/day))
+```
+
+### Landau's h, Triangle transitivity
+```{r}
+summary(unlist(sapply(cohort_devries, "[", 1)))
+unlist(sapply(cohort_devries, "[", 2))
+
+summary(unlist(sapply(cohort_ttritest, "[", 2)))
+unlist(sapply(cohort_ttritest, "[", 3))
+
+summary(unlist(sapply(cohort_dctest, "[", 7)))
+unlist(sapply(cohort_dctest, "[", 1))
+```
+
+### Despotism
+```{r}
+summary(despot$despotism)
+```
+
+### Glicko plot
+```{r, echo=F, fig.width=8,fig.height=12}
+grid.arrange(glickoplot[[1]],glickoplot[[2]],glickoplot[[3]],glickoplot[[4]],
+             glickoplot[[5]],glickoplot[[6]],glickoplot[[7]],glickoplot[[8]],nrow=4)
+```
+
+### body weight ~ rank
+Spearman's rank test then corrected for multiple comparison 
+```{r}
+p.adjust(bw.pval,method="BH") #all p>0.68
+```
+
+
+#02. Analysis of OTR and V1aR density 
+optical density~social status+(1|cohort)+(1|Film)
+```{r}
+est[,1:3]
+```
+
+### Figure 1.OTR density by social status groups in six brain regions analyzed. 
+Figure 1a: representative figures with a label to each brain region
+Figure 1b: raw data points & boxplots (with one y axis)
+Figure 1c: Bayesian stat result; mean estimate and 95% CI, posterior sentity plots from group comparisons with point range plot right underneath
+```{r}
+print(fig1b)
+print(fig1c)
+```
+
+### Figure 2. V1aR density by social status groups in six brain regions analyzed. 
+```{r}
+print(fig2b)
+print(fig2c)
+```
+

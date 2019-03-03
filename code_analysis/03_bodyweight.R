@@ -15,4 +15,3 @@ cor<-bwdf %>%
 bw.pval<-c(cor[[1]][3],cor[[2]][3],cor[[3]][3],cor[[4]][3],cor[[5]][3],cor[[6]][3]) #as always, there's gotta be smarter way but this is quicker than finding that out....
 p.adjust(bw.pval,method="BH") 
 
-#all p>0.68

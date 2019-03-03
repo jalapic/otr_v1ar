@@ -1,6 +1,11 @@
 ---
-title: "Social status in mouse social hierarchy is associated with oxytocin and vasopressin 1a receptor density"
-output: html_notebook
+title: Social status in mouse social hierarchy is associated with oxytocin and vasopressin
+  1a receptor density
+output:
+  html_notebook: default
+  html_document:
+    df_print: paged
+  pdf_document: default
 ---
 
 Run "all_analysis.R" first to display results/figures

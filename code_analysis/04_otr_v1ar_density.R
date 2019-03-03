@@ -66,7 +66,7 @@ table(df2$region)
 # fit1$VDB_fit1<-brm(dpm_mg_TE~domgroup+(1|cohort)+(1|Film),data=df2 %>% filter(region=="VDB"),control = list(adapt_delta=0.95))
 # fit1$VP_fit1<-brm(dpm_mg_TE~domgroup+(1|cohort)+(1|Film),data=df2 %>% filter(region=="VP"),control = list(adapt_delta=0.98))
 # fit1$VTA_fit1<-brm(dpm_mg_TE~domgroup+(1|cohort)+(1|Film),data=df2 %>% filter(region=="VTA"),control = list(adapt_delta=0.95))
-saveRDS(fit1,"data_clean/stat_RDS/fit1_delta095.RDS")
+#saveRDS(fit1,"data_clean/stat_RDS/fit1_delta095.RDS")
  
 fit1<-readRDS("data_clean/stat_RDS/fit1_delta095.RDS")
 

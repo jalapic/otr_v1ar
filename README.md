@@ -1,7 +1,7 @@
 # otr_v1ar
 Data and Code for Lee et al. 2019
 
-Social status in mouse social hierarchies is associated with variation in oxytocin and vasopressin 1a receptor densities
+# Social status in mouse social hierarchies is associated with variation in oxytocin and vasopressin 1a receptor densities
 
 Won Lee, Lisa C. Hiura, Eilene Yang, Katherine A. Broekman, Alexander G. Ophir, James P. Curley
 
